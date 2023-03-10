@@ -13,7 +13,7 @@ public partial class GBXFunctions
         object fileHandle;
         var list_of_files = new List<string>();
         var list_of_dates = new List<long>();
-        DateTime created_on;
+        DateTime modified_on;
         
         // The name of the file where data from Autosaves dir files are stored
         string autosaves_content_file = Definitions.working_path + Definitions.local_autosaves_txt;
@@ -48,7 +48,7 @@ public partial class GBXFunctions
                     {
                         // The first operation creates two lists: 
                         // a) a list with the filenames inside the Autosaves directory
-                        // b) a list with the date (in milliseconds since Epoch) that the .gbx file is creaed.
+                        // b) a list with the date (in milliseconds since Epoch) that the .gbx file is modified.
                         List<QueryDirectoryFileInformation> fileList;
                         status = fileStore.QueryDirectory(out fileList, directoryHandle, "*", FileInformationClass.FileDirectoryInformation);
 
@@ -57,8 +57,8 @@ public partial class GBXFunctions
                             if (((((SMBLibrary.FileDirectoryInformation)file).FileName)!=".") & ((((SMBLibrary.FileDirectoryInformation)file).FileName)!=".."))
                             {                    
                                 list_of_files.Add(((SMBLibrary.FileDirectoryInformation)file).FileName);
-                                created_on = (((SMBLibrary.FileDirectoryInformation)file).CreationTime);
-                                long date_unix = new DateTimeOffset(created_on).ToUnixTimeSeconds();
+                                modified_on = (((SMBLibrary.FileDirectoryInformation)file).LastWriteTime);
+                                long date_unix = new DateTimeOffset(modified_on).ToUnixTimeSeconds();
                                 list_of_dates.Add(date_unix);
                             }
                         }
