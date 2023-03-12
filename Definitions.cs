@@ -1,8 +1,8 @@
 public static class Definitions
 {
     // This is the name of the local file where creation date, map uid and PB
-    // from every map in autosaves dir are stored. For example:local_autosaves_txt = "Autosaves_content.txt";
-    public static string local_autosaves_txt = " ";
+    // from every map in autosaves dir are stored. Do not change this name, if you don't need to";
+    public static string local_autosaves_txt = "Autosaves_db.txt";
 
     // This is the Autosaves directory where replay gbx files are locally stored.
     public static string replays_path = @" ";
