@@ -16,7 +16,7 @@ public partial class GBXFunctions
 
         // Create the Autosaves_content.txt file and write the first line with the column headers
         FileStream autosaves = File.Create(autosaves_content_file);
-        AddText(autosaves, "unix_date, map_ID, PB_ms\n");
+        AddText(autosaves, "unix_date,map_ID,PB_ms\n");
 
         // initiate a counter for a console report of total files
         int i =0;
@@ -39,7 +39,7 @@ public partial class GBXFunctions
                         if (replay.MapInfo is not null)
                         {
                             // Add to Autosaves_content.txt file: file modification date, map ID and PB time in milliseconds.
-                            string line = string.Format("{0}, {1}, {2}\n", date_unix, replay.MapInfo.Id, replay.Time?.TotalMilliseconds);
+                            string line = string.Format("{0},{1},{2}\n", date_unix, replay.MapInfo.Id, replay.Time?.TotalMilliseconds);
                             AddText(autosaves, line);
                         }
                         break;
