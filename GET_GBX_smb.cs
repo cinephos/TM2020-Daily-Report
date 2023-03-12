@@ -24,7 +24,7 @@ public partial class GBXFunctions
 
         // Create the Autosaves_content.txt file and write the first line with the column headers
         FileStream autosaves = File.Create(autosaves_content_file);
-        AddText(autosaves, "unix_date, map_ID, PB_ms\n");
+        AddText(autosaves, "unix_date,map_ID,PB_ms\n");
 
 
         // The following lines implement the CLientExamples of the SMBLIbrary git repository.
@@ -113,7 +113,7 @@ public partial class GBXFunctions
                                     if (replay.MapInfo is not null)
                                     {
                                         // Add to Autosaves_content.txt file: file modification date, map ID and PB time in milliseconds.
-                                        string line = string.Format("{0}, {1}, {2}\n", list_of_dates[i], replay.MapInfo.Id, replay.Time?.TotalMilliseconds);
+                                        string line = string.Format("{0},{1},{2}\n", list_of_dates[i], replay.MapInfo.Id, replay.Time?.TotalMilliseconds);
                                         AddText(autosaves, line);
                                     }
                                 break;
