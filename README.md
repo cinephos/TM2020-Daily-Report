@@ -8,4 +8,12 @@ The project has various checkpoints to be met. As soon as each check point is cl
 
 **CHECKPOINT 1** Create c# code to read the headers of all .replay.gbx files stored in Autosaves directory in order to extract map uid and PB time. Then, store these values to a local .txt file. Two methods suuplied: a) Autosaves dir is available locally, and b) via [SMBLibrary](https://github.com/TalAloni/SMBLibrary), when Autosaves dir is located on a different computer.
 
-**CHECKPOINT 2** Create a local db in text format, which contains info of the played maps: name, name stripped of manialib format, author and medal times (almost completed)
+**CHECKPOINT 2** Create a local db in text format, which contains info of the played maps: name, name stripped of manialib format, author and medal times.
+
+**CHECKPOINT 3** (to be announced)
+
+
+*I express my deep appreciation to the members of the Openplanet community without whom, I would have not reached that far in my journey.*
+
+*Thank you ladies and gentlemen!*
+
