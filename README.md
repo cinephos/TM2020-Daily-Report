@@ -15,7 +15,7 @@ The project has various checkpoints to be met. As soon as each check point is cl
 **FINISH LINE** Daily Report tools (almost completed)
 
 
-*I express my deep appreciation to the members of the Openplanet community without whom, I would have not reached that far in my journey.*
+_I express my deep appreciation to the members of the Openplanet community without whom, I would have not reached that far in my journey._
 
-*Thank you ladies and gentlemen!*
+_Thank you ladies and gentlemen!_
 
