@@ -10,7 +10,9 @@ The project has various checkpoints to be met. As soon as each check point is cl
 
 **CHECKPOINT 2** Create a local db in text format, which contains info of the played maps: name, name stripped of manialib format, author and medal times.
 
-**CHECKPOINT 3** (to be announced)
+**CHECKPOINT 3** Create / maintain a local file with all new PBs achieved.
+
+**FINISH LINE** Daily Report tools (almost completed)
 
 
 *I express my deep appreciation to the members of the Openplanet community without whom, I would have not reached that far in my journey.*
