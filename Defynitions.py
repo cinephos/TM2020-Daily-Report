@@ -22,6 +22,10 @@ autosaves = "Autosaves_db.txt"
 
 my_maps = "My_maps_txt.txt"
 
+# This is the file where the PBs are stored. 
+
+my_PBs = "My_PBs_db.txt"
+
 # These are your Ubisoft credentials. 
 # You need to replace the asterisks with the string (without the quotes) which is 
 # produced by the following console command
