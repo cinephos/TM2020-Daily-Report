@@ -288,3 +288,54 @@ def CheckPoint_3():
     os.rename(Autosaves_file, Autosaves_file[:-4] + stringdate + Autosaves_file[-4:]) 
  
     return
+
+# This functions convers a string representing milliseconds of time to a string with 
+# a more convenient time format.
+
+def convert_pb_to_string(pb_s):
+    pb = int(pb_s) 
+    milliseconds = pb % 1000
+    seconds = (pb // 1000) % 60
+    
+    if pb in range(0,59999):
+        pb_string = "{}.{:03d}".format(seconds, milliseconds)
+    elif pb in range(60000, 3599999):    
+        minutes = (pb // 60000) % 60
+        pb_string = "{}:{:02d}.{:03d}".format(minutes, seconds, milliseconds)
+    else:
+        minutes = (pb // 60000) % 60
+        hours = pb // 3600000
+        pb_string = "{}:{:02d}:{:02d}.{:03d}".format(hours, minutes, seconds, milliseconds)
+    
+    return(pb_string)
+
+# this functions retrieves medal times from the local maps file, as well as PB times from the
+# local file and sorts this times in reverse order so that the TM_Daily_report 
+# is assembled.
+
+def print_map_details(mapIDf, my_maps_dataf, my_PBsf):
+    show = []
+    if any (mapIDf in (match := nested_list) for nested_list in my_maps_dataf):
+        row = my_maps_dataf.index(match)
+        at = convert_pb_to_string(my_maps_dataf[row][4])
+        show.append([int(my_maps_dataf[row][4]),"            Author medal:", at.rjust(9)])
+        gt = convert_pb_to_string(my_maps_dataf[row][5])
+        show.append([int(my_maps_dataf[row][5]), "              Gold medal:", gt.rjust(9)])
+        st = convert_pb_to_string(my_maps_dataf[row][6])
+        show.append([int(my_maps_dataf[row][6]),"            Silver medal:", st.rjust(9)])
+        bt = convert_pb_to_string(my_maps_dataf[row][7])
+        show.append([int(my_maps_dataf[row][7]),"            Bronze medal:", bt.rjust(9)])
+    
+        print(' ')
+        print("Name: ", my_maps_dataf[row][3])
+        print(' ')
+        for i in range(len(my_PBsf)):
+            if my_PBsf[i][1]==mapIDf:
+                show.append([int(my_PBsf[i][2]),datetime.datetime.fromtimestamp(int(my_PBsf[i][0])),\
+                            '  PB: ' + convert_pb_to_string(my_PBsf[i][2]).rjust(9)])
+                show.sort(key =lambda x: x[0], reverse=True)
+        for i in range(len(show)):
+            print(show[i][1], show[i][2])
+        print('-----------------------------------')
+    return
+
