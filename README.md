@@ -2,7 +2,7 @@
 
 This is a project regarding Nadeo's TrackMania 2020 game. It provides, on demand by terminal commands, a daily report of Personal Best times achieved on that day.
 
-Visit the [wiki page](https://github.com/cinephos/TM2020-Daily-Report/wiki) to find out the required libraries in c# and python.how to use it.
+Visit the [wiki page](https://github.com/cinephos/TM2020-Daily-Report/wiki) to find out the required libraries in c# and python. Read instructions how to use it.
 
 **CHECKPOINT 1** C# code which reads the headers of all .replay.gbx files stored in Autosaves directory in order to extract map uid and PB time. Data are stored to a local .txt file. Two methods suuplied: a) Autosaves dir is available locally, and b) via [SMBLibrary](https://github.com/TalAloni/SMBLibrary), when Autosaves dir is located on a different computer.
 
