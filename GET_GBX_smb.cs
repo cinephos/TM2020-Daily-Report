@@ -1,6 +1,7 @@
 using System.Net;
 using System.Text;
 using GBX.NET;
+using GBX.NET.LZO;
 using GBX.NET.Engines.Game;
 using SMBLibrary;
 using SMBLibrary.Client;
@@ -106,6 +107,7 @@ public partial class GBXFunctions
                             stream.Close();
 
                              // Get the file's header into the proper class
+                            GameBox.LZO = new MiniLZO();
                             var node = GameBox.ParseNode("temp.gbx");
                             switch (node)
                             {
