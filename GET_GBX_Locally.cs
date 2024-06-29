@@ -1,5 +1,6 @@
 using System.Text;
 using GBX.NET;
+using GBX.NET.LZO;
 using GBX.NET.Engines.Game;
 
 
@@ -32,6 +33,7 @@ public partial class GBXFunctions
                 long date_unix = new DateTimeOffset(file_modification_date).ToUnixTimeSeconds();
 
                 // Get the file's header into the proper class
+                GameBox.LZO = new MiniLZO();
                 var node = GameBox.ParseNode(file);
                 switch (node)
                 {
